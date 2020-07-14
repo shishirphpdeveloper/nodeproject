@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  </head>
+  <body>
+    <h1>Fetch Data</h1>
+    <table width="100%">
+    <tr>
+      <td>Name</td>
+      <td>Age</td>
+      <td>Email</td>
+      <td>Edit</td>
+    </tr>
+    <% records.forEach(function(row){  %>
+    <tr>
+      <td><%= row.name %></td>
+      <td><%= row.age %></td>
+      <td><%= row.email %></td>
+      <td>
+      <a class="btn btn-primary btn-xs" href="/edit/<%= row._id %>"><i class='fas fa-edit'></i></a>
+      <a class="btn btn-danger btn-xs" href="/delete/<%= row._id %>"><i class='fas fa-trash'></i></a>
+    </td>
+    </tr>
+    <% }); %>
+    </table>
+    <h1>Insert Data</h1>
+<form name="frm" action="" method="POST">
+    <table width="100%">
+      <tr>
+        <td>Name</td>
+        <td><input name="name" type="text" value=""></td>
+      </tr>
+      <tr>
+        <td>Age</td>
+        <td><input name="age" type="text" value=""></td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td><input name="email" type="text" value=""></td>
+      </tr> 
+      <tr>
+        <td>&nbsp;</td>
+        <td><input name="btnsubmit" type="submit" value="submit"></td>
+      </tr>     
+      </table>
+    </form>    
+  </body>
+</html>

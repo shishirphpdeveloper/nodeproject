@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+  </head>
+  <body>
+    <h1>Edit Data</h1>
+   
+<form name="frm" action="/update/" method="POST">
+    <input name="id" type="hidden" value="<%= records._id; %>">
+    <table width="100%">
+      <tr>
+        <td>Name</td>
+        <td><input name="name" type="text" value="<%= records.name; %>"></td>
+      </tr>
+      <tr>
+        <td>Age</td>
+        <td><input name="age" type="text" value="<%= records.age; %>"></td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td><input name="email" type="text" value="<%= records.email; %>"></td>
+      </tr> 
+      <tr>
+        <td>&nbsp;</td>
+        <td><input name="btnsubmit" type="submit" value="Update"></td>
+      </tr>     
+      </table>
+    </form>    
+  </body>
+</html>
